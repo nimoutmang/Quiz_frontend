@@ -7,6 +7,7 @@ new Vue ({
         title: null,
         body:null,
         updateId: null,
+        isHidden: false
     },
     methods: {
         getInfor(){
@@ -48,6 +49,8 @@ new Vue ({
             this.title = todos.title;
             this.body = todos.body;
             this.updateId = todos.id;
+            this.isHidden = true
+            
         },
         // Update TODO
         updateTodo(){
@@ -59,7 +62,7 @@ new Vue ({
             axios.put("http://localhost:3000/api/books/"+ parseInt(this.updateId), data).then(()=>{
                 window.location.reload();
             })
-            this.isHidden = false
+            this.isHidden = false;
         }
     },
     mounted() {

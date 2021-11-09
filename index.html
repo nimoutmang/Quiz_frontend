@@ -17,7 +17,8 @@
                 <input type="text" placeholder="Title" v-model="title">
                 <textarea name="" id="" cols="30" rows="3" placeholder="body" v-model="body">
                 </textarea>
-                <input type="submit"> 
+                <input type="submit" v-if="!isHidden"> 
+                <button @click="updateTodo()" v-if="isHidden">Update</button>
             </form>
         </div>
         <br>
